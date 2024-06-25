@@ -21,6 +21,7 @@ var result = await fetch('https://todos.routemisr.com/api/v1/todos', {
     cache:'default'
 }) 
 var a = await result.json()
+reset()
 if (a.message == 'success'){
     getAllToDo()
 }
@@ -93,3 +94,9 @@ async function deleteTodo(todos_id){
         getAllToDo()
         }
     }
+
+
+// to reset the input value 
+function reset(){
+    inp.value = null ;
+}
